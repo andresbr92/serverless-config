@@ -1,0 +1,24 @@
+
+service: aws-lambda-api-service
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  apiGateway:
+    shouldStartNameWithService: true
+  lambdaHashingVersion: 20201221
+
+# you can overwrite defaults here
+  stage: dev
+  profile: deploy-aws
+  region: eu-central-1
+
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: /helloWorld
