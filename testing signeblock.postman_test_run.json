@@ -1,0 +1,62 @@
+{
+	"id": "eca54a17-fba8-4926-ad86-d154d186466c",
+	"name": "testing signeblock",
+	"timestamp": "2021-02-18T14:46:26.918Z",
+	"collection_id": "1de56b9a-f6bc-40c8-b00b-3cec38123089",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "58a574cb-6b69-40ef-ba3a-c570a0ccc5a8",
+			"name": "get request",
+			"url": "https://6cfa6qks29.execute-api.eu-central-1.amazonaws.com/dev/signeblock",
+			"time": 266,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				266
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1dbc99bb-ea3b-491e-b0ee-ccf8fb746508",
+			"name": "post request",
+			"url": "https://6cfa6qks29.execute-api.eu-central-1.amazonaws.com/dev/signeblock",
+			"time": 298,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				298
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 564,
+	"collection": {
+		"requests": [
+			{
+				"id": "58a574cb-6b69-40ef-ba3a-c570a0ccc5a8",
+				"method": "GET"
+			},
+			{
+				"id": "1dbc99bb-ea3b-491e-b0ee-ccf8fb746508",
+				"method": "POST"
+			}
+		]
+	}
+}
