@@ -8,6 +8,15 @@ provider:
   apiGateway:
     shouldStartNameWithService: true
   lambdaHashingVersion: 20201221
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+      Resource: "*"
+  
 
 # you can overwrite defaults here
   stage: dev
@@ -17,8 +26,31 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: handler.getElement
     events:
       - http:
           method: get
-          path: /helloWorld
+          path: /signeblock
+          cors: true
+  goodbye:
+    handler: handler.createElement
+    events:
+      - http:
+          method: post
+          path: /signeblock
+          cors: true
+resources:
+  Resources:
+    serviceTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: example-signeblock
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
